@@ -1,0 +1,17 @@
+MyRobot:
+    # Publish all joint states
+    joints_update:
+      type: joint_state_controller/JointStateController
+      publish_rate: 50
+
+    JointA_EffortController:
+      type: effort_controllers/JointVelocityController
+      joint: JointA
+      pid: {p: 100.0, i: 100.0, d: 0.0, i_clamp_min: -255, i_clamp_max: 255, antiwindup: True}
+
+    
+    JointB_EffortController:
+      type: effort_controllers/JointVelocityController
+      joint: JointB
+      pid: {p: 100.0, i: 100.0, d: 0.0, i_clamp_min: -255.0, i_clamp_max: 255, antiwindup: True}
+      

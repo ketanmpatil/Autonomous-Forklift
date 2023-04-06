@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/wolf/be_project/devel/include/**",
+        "/home/wolf/eyrc_wk/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/wolf/be_project/src/diffbot/diffbot_base/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/task_1/edrone_client/include/**",
+        "/home/wolf/be_project/src/forklift/include/**",
+        "/home/wolf/be_project/src/ldlidar_sl_ros/include/**",
+        "/home/wolf/be_project/src/linorobot/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/task_1/mav_comm/mav_msgs/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/task_1/mav_comm/mav_planning_msgs/include/**",
+        "/home/wolf/eyrc_wk/src/octomap_msgs/include/**",
+        "/home/wolf/eyrc_wk/src/octomap_ros/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/task_1/rotors_control/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/task_1/rotors_edrone_interface/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/task_1/rotors_gazebo/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/task_1/rotors_gazebo_plugins/include/**",
+        "/home/wolf/eyrc_wk/src/sentinel_drone/whycon/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

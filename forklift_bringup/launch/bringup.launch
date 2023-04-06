@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="arduino" pkg="rosserial_arduino" type="serial_node.py"  output="log">
+       <param name="port"              type="string"               value="/dev/ttyUSB0"/>
+        <param name="baud"              type="int"                  value="115200"/>     
+    </node>
+
+
+    <!-- Lidar Bringup -->
+    <include file="$(find ldlidar_sl_ros)/launch/viewer_ld14_noetic.launch">
+    <param name="port_name" type="string" value="/dev/ttyUSB1"/>   
+    </include>
+    
+
+</launch>

@@ -1,0 +1,35 @@
+<launch>
+    
+  <rosparam file="$(find forklift)/config/controllers.yaml" command="load"/>
+  <rosparam file="$(find forklift)/config/joint_limits.yaml" command="load"/>
+
+  <include file="$(find ldlidar_sl_ros)/launch/viewer_ld14_noetic.launch" />
+  <!-- <arg name="port"/> -->
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find forklift)/urdf/dummy.xacro'" />
+
+  <node name="MyRobotHardwareInterface" pkg="forklift" type="robot_hardware_interface" output="screen"/>
+  <!-- <node name="odomPublisher" pkg="forklift" type="odom_publisher" output="screen"/> -->
+
+  <!-- <node name="rosserial_base_controller" pkg="rosserial_python" type="serial_node.py" respawn="false"
+      output="screen" ns="diffbot" args="_port:=$(arg port)
+                                         _baud:=115200">
+
+
+  </node> -->
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+            /MyRobot/joints_update
+            /MyRobot/JointA_EffortController
+            /MyRobot/JointB_EffortController
+        "/> 
+  <node name="differential_drive" pkg="differential_drive" type="diff_tf.py" output="screen">
+  <rosparam param="tick_meter">4845</rosparam>
+  <rosparam param="base_width">0.30</rosparam>
+  </node>
+  
+
+</launch>
